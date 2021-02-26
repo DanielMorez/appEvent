@@ -16,13 +16,15 @@ Including another URLconf
 
 from django.urls import path, include
 from rest_framework import routers
-from .views import PostViewSet
+from .views import PostViewSet, GetUpdateView, get_update
 
 
 router = routers.DefaultRouter()
 router.register(r'posts', PostViewSet, basename='post')
 
 urlpatterns = [
+    path('get-news/', GetUpdateView.as_view(), name='main'),
+    path('check-update/', get_update, name='get-update'),
     path('', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 ]

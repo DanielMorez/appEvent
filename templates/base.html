@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>response</title>
+</head>
+<body>
+    <form method="post" action="\check-update\">
+        {% csrf_token %}
+        <button type="submit">Проверить обновления</button>
+    </form>
+</body>
+</html>
