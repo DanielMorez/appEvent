@@ -121,3 +121,15 @@ celery -A appEvent beat -l info
 <br><br>
 HTTP API с методом: http://127.0.0.1:8000/posts/
 <br><br>
+
+##P.S.
+
+Чтобы изменить частоту обновлений перейдите в appEvent/celery.py и измените значение:
+```python
+app.conf.beat_schedule = {
+    'check-news-every-5-minute': {
+        'task': 'mainapp.tasks.beat_update_news',
+        'schedule': crontab(minute='*/<КОЛ-ВО МИНУТ МЕЖДУ ЗАПРОСАМИ>')
+    }
+}
+```
