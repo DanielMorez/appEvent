@@ -122,7 +122,7 @@ celery -A appEvent beat -l info
 HTTP API с методом: http://127.0.0.1:8000/posts/
 <br><br>
 
-##P.S.
+## P.S.
 
 Чтобы изменить частоту обновлений перейдите в appEvent/celery.py и измените значение:
 ```python
